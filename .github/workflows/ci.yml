@@ -1,8 +1,8 @@
 name: ci
 
 on:
-  workflow_dispatch:      # Start a workflow
-  push:
+  workflow_dispatch:      # Manual trigger only (push trigger disabled to prevent broken legacy Odroid builds)
+  # push:
 
 jobs:
   build:

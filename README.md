@@ -103,7 +103,7 @@ The ESP32-S3 port is actively being developed.
 * **WonderSwan / WonderSwan Color** core (Oswan) integrated and functional
 * **MSX / MSX2** core (fMSX) integrated
 * **Amiga 500** core (UAE4all / FAME-C) integrated (experimental, see [FAZIT.md](a500/FAZIT.md))
-* **PICO-8** core (Fake-08) integrated (experimental)
+* **PICO-8** core (Fake-08) experimental (sources ported, **not included in current pre-built release image**)
 * Firmware images and app partitions generated with `rg_tool.py`
 
 The current ESP32-S3 build system uses **ESP-IDF** rather than the Arduino build system used by some of the earlier experiments.
@@ -157,7 +157,7 @@ Several emulator components have been ported, adapted or integrated on the ESP32
 * **App Target:** `fake08/`
 * **Core Component:** `fake-08/` (source tree adapted for ESP32-S3)
 * **Supported File Types:** `.p8`, `.p8.png`
-* **Status:** Integrated into Retro-Go as an **experimental** core / proof-of-concept.
+* **Status:** Integrated into the repository as an **experimental** proof-of-concept (sources ported, but **not included in the current pre-built release build** `v1.04`; under active development).
 * **Key Implementation Details:**
   * Uses the Fake-08 emulator engine (`vm.cpp`, `cart.cpp`, `z8lua`).
   * Custom Retro-Go Host integration in `fake08/main/main.cpp` using Retro-Go display buffers (`rg_surface_t`, `rg_display_submit`), audio DMA streaming (`rg_audio_submit`), and input polling.
@@ -247,7 +247,7 @@ optimized to reduce their cpu, memory, and flash needs without reducing compatib
 - Bandai: **WonderSwan, WonderSwan Color** (Core: Oswan)
 - Microsoft / ASCII: **MSX, MSX2** (Core: fMSX)
 - Commodore: **Amiga 500** (Core: UAE4all / FAME-C, experimentell – siehe [FAZIT.md](a500/FAZIT.md))
-- PICO-8: **PICO-8** (Core: Fake-08, experimentell)
+- PICO-8: **PICO-8** (Core: Fake-08, experimentell – Quelltexte portiert, noch nicht im v1.04 Release-Build enthalten)
 - Others: **DOOM** (including mods!)
 
 

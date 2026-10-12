@@ -42,17 +42,17 @@
 
 
 // Input
-#define RG_GAMEPAD_GPIO_MAP {\
-   {RG_KEY_SELECT, .num = GPIO_NUM_16, .pullup = 1, .level = 0},\
-    {RG_KEY_START,  .num = GPIO_NUM_17, .pullup = 1, .level = 0},\
-    {RG_KEY_MENU,   .num = GPIO_NUM_18, .pullup = 1, .level = 0},\
-    {RG_KEY_OPTION, .num = GPIO_NUM_8,  .pullup = 1, .level = 0},\
-    {RG_KEY_A,      .num = GPIO_NUM_15, .pullup = 1, .level = 0},\
-    {RG_KEY_B,      .num = GPIO_NUM_5,  .pullup = 1, .level = 0},\
-{RG_KEY_UP,      .num = GPIO_NUM_6, .pullup = 1, .level = 0},\
-    {RG_KEY_RIGHT,      .num = GPIO_NUM_7,  .pullup = 1, .level = 0},\
-{RG_KEY_DOWN,      .num = GPIO_NUM_0, .pullup = 1, .level = 0},\
-    {RG_KEY_LEFT,      .num = GPIO_NUM_45,  .pullup = 1, .level = 0},\
+#define RG_GAMEPAD_GPIO_MAP {                                                   \
+    {RG_KEY_SELECT, .num = GPIO_NUM_16, .pullup = 1, .level = 0},               \
+    {RG_KEY_START,  .num = GPIO_NUM_17, .pullup = 1, .level = 0},               \
+    {RG_KEY_MENU,   .num = GPIO_NUM_18, .pullup = 1, .level = 0},               \
+    {RG_KEY_OPTION, .num = GPIO_NUM_8,  .pullup = 1, .level = 0},               \
+    {RG_KEY_A,      .num = GPIO_NUM_15, .pullup = 1, .level = 0},               \
+    {RG_KEY_B,      .num = GPIO_NUM_5,  .pullup = 1, .level = 0},               \
+    {RG_KEY_UP,     .num = GPIO_NUM_6,  .pullup = 1, .level = 0},               \
+    {RG_KEY_RIGHT,  .num = GPIO_NUM_7,  .pullup = 1, .level = 0},               \
+    {RG_KEY_DOWN,   .num = GPIO_NUM_0,  .pullup = 1, .level = 0},               \
+    {RG_KEY_LEFT,   .num = GPIO_NUM_45, .pullup = 1, .level = 0},               \
 }
 
 // Battery
@@ -80,7 +80,9 @@
 #define RG_GPIO_SDSPI_CLK           GPIO_NUM_13
 #define RG_GPIO_SDSPI_CS            GPIO_NUM_10
 
-// External I2S DAC
-#define RG_GPIO_SND_I2S_BCK         41
-#define RG_GPIO_SND_I2S_WS          42
-#define RG_GPIO_SND_I2S_DATA        40
+// External I2S DAC (MAX98357A: SD = 3.3V fest, VIN = 3.3V/5V, GND = GND)
+#define RG_GPIO_SND_I2S_BCK         GPIO_NUM_41
+#define RG_GPIO_SND_I2S_WS          GPIO_NUM_42
+#define RG_GPIO_SND_I2S_DATA        GPIO_NUM_40
+#define RG_GPIO_SND_AMP_ENABLE      GPIO_NUM_NC // Kein Enable-Pin im Code, SD ist fest verdrahtet
+

@@ -51,23 +51,39 @@ The SD card is connected through SPI:
 
 The SD card is used for ROMs, disk images and emulator data.
 
+### Audio (MAX98357A I2S DAC)
+
+I2S digital audio output configuration:
+
+| Signal / Pin | ESP32-S3 / Level | Note |
+| ------------ | ---------------: | ---- |
+| BCLK (BCK)   |           GPIO41 | I2S Bit Clock |
+| LRC (WS)     |           GPIO42 | Word Select / Left-Right Clock |
+| DIN (DATA)   |           GPIO40 | Serial Data |
+| SD           |            3.3 V | Festeingeschaltet (kein Enable-Pin im Code / `GPIO_NUM_NC`) |
+| VIN          |      3.3 V / 5 V | Stromversorgung (5 V für 3 W an 4 Ω) |
+| GND          |              GND | Masse |
+
 ---
 
 ## Input
 
-The current button configuration is:
+The gamepad button configuration is:
 
-| Function |                GPIO |
-| -------- | ------------------: |
-| SELECT   |              GPIO16 |
-| START    |              GPIO17 |
-| MENU     |              GPIO18 |
-| OPTION   |               GPIO8 |
-| A        |              GPIO15 |
-| B        |               GPIO5 |
-| D-pad    | GPIO6 / GPIO7 (ADC) |
+| Function |   GPIO | Configuration |
+| -------- | -----: | ------------- |
+| UP       |  GPIO6 | Pull-up, Level 0 (Active Low) |
+| DOWN     |  GPIO0 | Pull-up, Level 0 (Active Low) |
+| LEFT     | GPIO45 | Pull-up, Level 0 (Active Low) |
+| RIGHT    |  GPIO7 | Pull-up, Level 0 (Active Low) |
+| A        | GPIO15 | Pull-up, Level 0 (Active Low) |
+| B        |  GPIO5 | Pull-up, Level 0 (Active Low) |
+| SELECT   | GPIO16 | Pull-up, Level 0 (Active Low) |
+| START    | GPIO17 | Pull-up, Level 0 (Active Low) |
+| MENU     | GPIO18 | Pull-up, Level 0 (Active Low) |
+| OPTION   |  GPIO8 | Pull-up, Level 0 (Active Low) |
 
-The input handling has been adapted for the ESP32-S3 target.
+All buttons are configured with internal pull-ups (`pullup = 1`) and active-low trigger (`level = 0`).
 
 ---
 

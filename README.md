@@ -28,15 +28,17 @@ Target board:
 
 Current display configuration:
 
-| Signal    |   GPIO |
-| --------- | -----: |
-| MOSI      | GPIO12 |
-| CLK       | GPIO48 |
-| DC        | GPIO47 |
-| RST       |  GPIO3 |
-| Backlight | GPIO39 |
+| Signal    |   GPIO / Connection |
+| --------- | ------------------: |
+| CS        | GND (fest auf Masse) |
+| MOSI      |              GPIO12 |
+| CLK       |              GPIO48 |
+| DC        |              GPIO47 |
+| RST       |               GPIO3 |
+| Backlight |              GPIO39 |
 
-Touch functionality is **not used**.
+* The **CS** (Chip Select) pin of the ILI9341 display is permanently tied to **GND** (configured as `GPIO_NUM_NC` in code).
+* Touch functionality is **not used**.
 
 ### SD card
 

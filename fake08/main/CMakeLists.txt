@@ -1,0 +1,75 @@
+set(COMPONENT_REQUIRES "retro-go")
+
+set(FAKE08_SRC 
+    "../../fake-08/libs/z8lua/eris.c"
+    "../../fake-08/libs/z8lua/lapi.c"
+    "../../fake-08/libs/z8lua/lauxlib.c"
+    "../../fake-08/libs/z8lua/lbaselib.c"
+    "../../fake-08/libs/z8lua/lbitlib.c"
+    "../../fake-08/libs/z8lua/lcode.c"
+    "../../fake-08/libs/z8lua/lcorolib.c"
+    "../../fake-08/libs/z8lua/lctype.c"
+    "../../fake-08/libs/z8lua/ldblib.c"
+    "../../fake-08/libs/z8lua/ldebug.c"
+    "../../fake-08/libs/z8lua/ldo.c"
+    "../../fake-08/libs/z8lua/ldump.c"
+    "../../fake-08/libs/z8lua/lfunc.c"
+    "../../fake-08/libs/z8lua/lgc.c"
+    "../../fake-08/libs/z8lua/linit.c"
+    "../../fake-08/libs/z8lua/liolib.c"
+    "../../fake-08/libs/z8lua/llex.c"
+    "../../fake-08/libs/z8lua/lmem.c"
+    "../../fake-08/libs/z8lua/loadlib.c"
+    "../../fake-08/libs/z8lua/lobject.c"
+    "../../fake-08/libs/z8lua/lopcodes.c"
+    "../../fake-08/libs/z8lua/loslib.c"
+    "../../fake-08/libs/z8lua/lparser.c"
+    "../../fake-08/libs/z8lua/lpico8lib.c"
+    "../../fake-08/libs/z8lua/lstate.c"
+    "../../fake-08/libs/z8lua/lstring.c"
+    "../../fake-08/libs/z8lua/lstrlib.c"
+    "../../fake-08/libs/z8lua/ltable.c"
+    "../../fake-08/libs/z8lua/ltablib.c"
+    "../../fake-08/libs/z8lua/ltests.c"
+    "../../fake-08/libs/z8lua/ltm.c"
+    "../../fake-08/libs/z8lua/lundump.c"
+    "../../fake-08/libs/z8lua/lvm.c"
+    "../../fake-08/libs/z8lua/lzio.c"
+    "../../fake-08/libs/simpleini/ConvertUTF.c"
+    "../../fake-08/libs/miniz/miniz.c"
+    "../../fake-08/libs/lodepng/lodepng.cpp"
+    "../../fake-08/source/Audio.cpp"
+    "../../fake-08/source/Input.cpp"
+    "../../fake-08/source/cart.cpp"
+    "../../fake-08/source/emojiconversion.cpp"
+    "../../fake-08/source/filehelpers.cpp"
+    "../../fake-08/source/filter.cpp"
+    "../../fake-08/source/fontdata.cpp"
+    "../../fake-08/source/graphics.cpp"
+    "../../fake-08/source/hostCommonFunctions.cpp"
+    "../../fake-08/source/logger.cpp"
+    "../../fake-08/source/mathhelpers.cpp"
+    "../../fake-08/source/nibblehelpers.cpp"
+    "../../fake-08/source/picoluaapi.cpp"
+    "../../fake-08/source/printHelper.cpp"
+    "../../fake-08/source/stringToDataHelpers.cpp"
+    "../../fake-08/source/synth.cpp"
+    "../../fake-08/source/vm.cpp"
+    "main.cpp"
+)
+
+set(COMPONENT_SRCS ${FAKE08_SRC})
+
+set(COMPONENT_ADD_INCLUDEDIRS 
+    "." 
+    "../../fake-08/source" 
+    "../../fake-08/libs/z8lua"
+    "../../fake-08/libs/lodepng"
+    "../../fake-08/libs/miniz"
+    "../../fake-08/libs/simpleini"
+)
+
+register_component()
+
+set_source_files_properties(${FAKE08_SRC} PROPERTIES LANGUAGE CXX)
+target_compile_options(${COMPONENT_TARGET} PRIVATE -w -fpermissive -std=gnu++17 -DLUA_USE_LONGJMP -fexceptions)

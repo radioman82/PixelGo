@@ -33,6 +33,8 @@ backup_stand_*/
 a500_debug.txt
 test_part.bin
 tools/uae4all-rpi/
+tools/LCD-Game-Shrinker-1.0.0-2023/
+tools/gw-libretro-master/
 a500/workbench/
 *.adf
 game-and-watch-retro-go.git/

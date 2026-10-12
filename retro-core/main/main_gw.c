@@ -1,3 +1,4 @@
+#if 0 // Disabled Game & Watch core
 #include "shared.h"
 
 #include <stdio.h>
@@ -286,3 +287,4 @@ void gw_main(void)
         rg_system_sync_frame(startTime);
     } // end of loop
 }
+#endif

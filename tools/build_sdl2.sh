@@ -20,9 +20,9 @@ $CC $CFLAGS $INCLUDES -Ilauncher/main $SRCFILES launcher/main/*.c $LIBS -o launc
 echo "Building retro-core..."
 $CC $CFLAGS $INCLUDES \
 	-Iretro-core/components/gnuboy \
-	-Iretro-core/components/gw-emulator/src \
-	-Iretro-core/components/gw-emulator/src/cpus \
-	-Iretro-core/components/gw-emulator/src/gw_sys \
+	# -Iretro-core/components/gw-emulator/src \
+	# -Iretro-core/components/gw-emulator/src/cpus \
+	# -Iretro-core/components/gw-emulator/src/gw_sys \
 	-Iretro-core/components/handy \
 	-Iretro-core/components/nofrendo \
 	-Iretro-core/components/pce-go \
@@ -30,9 +30,9 @@ $CC $CFLAGS $INCLUDES \
 	-Iretro-core/main \
 	$SRCFILES \
 	retro-core/components/gnuboy/*.c \
-	retro-core/components/gw-emulator/src/*.c \
-	retro-core/components/gw-emulator/src/cpus/*.c \
-	retro-core/components/gw-emulator/src/gw_sys/*.c \
+	# retro-core/components/gw-emulator/src/*.c \
+	# retro-core/components/gw-emulator/src/cpus/*.c \
+	# retro-core/components/gw-emulator/src/gw_sys/*.c \
 	retro-core/components/handy/*.cpp \
 	retro-core/components/nofrendo/mappers/*.c \
 	retro-core/components/nofrendo/nes/*.c \

@@ -87,6 +87,7 @@ The ESP32-S3 port is actively being developed.
 * **WonderSwan / WonderSwan Color** core (Oswan) integrated and functional
 * **MSX / MSX2** core (fMSX) integrated
 * **Amiga 500** core (UAE4all / FAME-C) integrated (experimental, see [FAZIT.md](a500/FAZIT.md))
+* **PICO-8** core (Fake-08) integrated (experimental)
 * Firmware images and app partitions generated with `rg_tool.py`
 
 The current ESP32-S3 build system uses **ESP-IDF** rather than the Arduino build system used by some of the earlier experiments.
@@ -135,6 +136,18 @@ Several emulator components have been ported, adapted or integrated on the ESP32
   * Gamepad joystick mode and selectable mouse mode via `SELECT`.
   * Detailed architectural findings and performance analysis (comparing Musashi vs. UAE4all/FAME-C, PSRAM latency bottlenecks, and frame rates) are documented in [a500/FAZIT.md](a500/FAZIT.md).
 
+### PICO-8 Fantasy Console (Fake-08)
+
+* **App Target:** `fake08/`
+* **Core Component:** `fake-08/` (source tree adapted for ESP32-S3)
+* **Supported File Types:** `.p8`, `.p8.png`
+* **Status:** Integrated into Retro-Go as an **experimental** core / proof-of-concept.
+* **Key Implementation Details:**
+  * Uses the Fake-08 emulator engine (`vm.cpp`, `cart.cpp`, `z8lua`).
+  * Custom Retro-Go Host integration in `fake08/main/main.cpp` using Retro-Go display buffers (`rg_surface_t`, `rg_display_submit`), audio DMA streaming (`rg_audio_submit`), and input polling.
+  * Adapted for Xtensa / ESP-IDF C++ toolchain: fixed 32-bit fixed-point arithmetic (`fix32.h`), `luaconf.h` casting fixes, isolated LodePNG symbol conflicts, and routed console logging directly to standard output.
+  * ROMs and cartridges are located at `/sd/roms/pico8`.
+
 ---
 
 ## Documentation
@@ -159,6 +172,9 @@ python rg_tool.py --target esp32-s3-devkit build ngp
 # Build WonderSwan
 python rg_tool.py --target esp32-s3-devkit build oswan
 
+# Build Fake-08 (PICO-8, experimental)
+python rg_tool.py --target esp32-s3-devkit build fake08
+
 # Build all configured applications
 python rg_tool.py --target esp32-s3-devkit build
 ```
@@ -168,6 +184,7 @@ Successful builds generate the binaries in each app's `build` directory:
 ```text
 ngp/build/ngp.bin
 oswan/build/oswan.bin
+fake08/build/fake08.bin
 launcher/build/launcher.bin
 ```
 
@@ -214,6 +231,7 @@ optimized to reduce their cpu, memory, and flash needs without reducing compatib
 - Bandai: **WonderSwan, WonderSwan Color** (Core: Oswan)
 - Microsoft / ASCII: **MSX, MSX2** (Core: fMSX)
 - Commodore: **Amiga 500** (Core: UAE4all / FAME-C, experimentell – siehe [FAZIT.md](a500/FAZIT.md))
+- PICO-8: **PICO-8** (Core: Fake-08, experimentell)
 - Others: **DOOM** (including mods!)
 
 

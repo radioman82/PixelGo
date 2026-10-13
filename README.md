@@ -40,18 +40,23 @@ Current display configuration:
 * The **CS** (Chip Select) pin of the ILI9341 display is permanently tied to **GND** (configured as `GPIO_NUM_NC` in code).
 * Touch functionality is **not used**.
 
-### SD card
+### SD card / MicroSD Modul
 
 The SD card is connected through SPI:
 
-| Signal |   GPIO |
-| ------ | -----: |
-| MISO   |  GPIO9 |
-| MOSI   | GPIO11 |
-| CLK    | GPIO13 |
-| CS     | GPIO10 |
+| Signal / Pin | ESP32-S3 / Level | Note |
+| ------------ | ---------------: | ---- |
+| MISO         |            GPIO9 | SPI Data Out / MISO |
+| MOSI         |           GPIO11 | SPI Data In / MOSI |
+| CLK          |           GPIO13 | SPI Clock / SCK |
+| CS           |           GPIO10 | Chip Select |
+| 3.3V (VCC)   |            3.3 V | Stromversorgung |
+| GND          |              GND | Masse |
 
 The SD card is used for ROMs, disk images and emulator data.
+
+* **MicroSD-Modul als platzsparende Alternative:** Statt des integrierten Full-Size-SD-Kartenslots auf der Rückseite des TFT-Displays kann mit denselben SPI-Pins (GPIO9, GPIO11, GPIO13, GPIO10) auch ein separates **Micro-SD-Kartenmodul** verwendet werden. Dieses muss zusätzlich mit **3,3 V** und **GND** angeschlossen werden.
+* **Gehäuse-Vorteil:** Durch den Verzicht auf die sperrige Standard-SD-Karte im TFT-Display bleibt deutlich mehr Platz im Gehäuse.
 
 ### Audio (MAX98357A I2S DAC)
 

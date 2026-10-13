@@ -75,6 +75,7 @@
 #define RG_GPIO_LCD_BCKL            GPIO_NUM_39
 #define RG_GPIO_LCD_RST             GPIO_NUM_3
 
+// SD / MicroSD SPI (alternativ zum TFT-SD-Slot kann ein MicroSD-Modul an denselben Pins + 3.3V & GND genutzt werden)
 #define RG_GPIO_SDSPI_MISO          GPIO_NUM_9
 #define RG_GPIO_SDSPI_MOSI          GPIO_NUM_11
 #define RG_GPIO_SDSPI_CLK           GPIO_NUM_13

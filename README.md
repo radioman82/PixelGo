@@ -2,12 +2,15 @@
 
 This repository is a personal development fork of Retro-Go focused on the **ESP32-S3 DevKitC-1 N16R8** and a small SPI TFT based retro-gaming system.
 
-**Original project:** Retro-Go
-**Fork:** `radioman82/retro-go`
-**Development branch:** `nano-s3`
+**Original project:** Retro-Go  
+**Fork:** `radioman82/retro-go`  
+**Development branch:** `nano-s3`  
+**Releases:** [Download pre-built firmware images](https://github.com/radioman82/retro-go/releases)
 
 This fork contains my hardware-specific adaptations, configuration changes, emulator work and documentation for the ESP32-S3 platform.
 
+> 🎮 **Pre-built firmware images available:** Ready-to-flash binaries and full images for the ESP32-S3 can be downloaded directly from the [GitHub Releases](https://github.com/radioman82/retro-go/releases) page.
+>
 > This is a development fork. Not all components described below are finished or fully integrated.
 
 ---

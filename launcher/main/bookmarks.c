@@ -81,7 +81,7 @@ static void tab_refresh(book_t *book)
     if (items_count == 0)
     {
         gui_resize_list(tab, 6);
-        sprintf(tab->listbox.items[0].text, _("Welcome to Retro-Go!"));
+        sprintf(tab->listbox.items[0].text, _("Welcome to PixelGo!"));
         sprintf(tab->listbox.items[1].text, " ");
         sprintf(tab->listbox.items[2].text, _("You have no %s games"), book->name);
         sprintf(tab->listbox.items[3].text, " ");

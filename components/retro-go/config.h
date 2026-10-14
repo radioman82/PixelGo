@@ -45,15 +45,15 @@
 #endif
 
 #ifndef RG_PROJECT_NAME
-#define RG_PROJECT_NAME "Retro-Go"
+#define RG_PROJECT_NAME "PixelGo"
 #endif
 
 #ifndef RG_PROJECT_WEBSITE
-#define RG_PROJECT_WEBSITE "https://github.com/ducalex/retro-go"
+#define RG_PROJECT_WEBSITE "https://github.com/radioman82/retro-go"
 #endif
 
 #ifndef RG_PROJECT_CREDITS
-#define RG_PROJECT_CREDITS "Retro-Go: ducalex\n"
+#define RG_PROJECT_CREDITS "PixelGo: radioman82\nRetro-Go: ducalex\n"
 // TODO: Decide which additional credits should be included here?
 // Maybe the main author for each emulator? Or should that credit be only when seeing `about` inside said app?
 // What about libraries and fonts (lodepng, etc)?

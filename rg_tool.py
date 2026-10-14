@@ -15,7 +15,7 @@ DEFAULT_TARGET = os.getenv("RG_TOOL_TARGET", "ESP32-S3-DEVKIT")
 DEFAULT_BAUD = os.getenv("RG_TOOL_BAUD", "1152000")
 DEFAULT_PORT = os.getenv("RG_TOOL_PORT", "COM4")
 DEFAULT_APPS = os.getenv("RG_TOOL_APPS", "launcher retro-core gnuboy snes ngp gwenesis oswan fmsx")
-PROJECT_NAME = os.getenv("PROJECT_NAME", "Retro-Go")
+PROJECT_NAME = os.getenv("PROJECT_NAME", "PixelGo")
 PROJECT_ICON = os.getenv("PROJECT_ICON", "assets/icon.raw")
 PROJECT_APPS = {
   # Project name  Type, SubType, Size (bytes)

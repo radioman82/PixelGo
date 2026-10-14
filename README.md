@@ -1,13 +1,14 @@
-# Retro-Go – ESP32-S3 / nano-s3 Fork
+# PixelGo – a Retro-Go fork for ESP boards
 
-This repository is a personal development fork of Retro-Go focused on the **ESP32-S3 DevKitC-1 N16R8** and a small SPI TFT based retro-gaming system.
+**PixelGo** is a retro-gaming firmware and development fork of Retro-Go, focused on ESP microcontrollers (especially the **ESP32-S3 DevKitC-1 N16R8** and Waveshare Nano-S3) with SPI TFT displays and custom handheld hardware.
 
-**Original project:** Retro-Go  
-**Fork:** `radioman82/retro-go`  
-**Development branch:** `nano-s3`  
-**Releases:** [Download pre-built firmware images](https://github.com/radioman82/retro-go/releases)
+* **Project:** PixelGo
+* **Fork of:** [Retro-Go by ducalex](https://github.com/ducalex/retro-go)
+* **Author / Maintainer:** `radioman82`
+* **Development branch:** `nano-s3`
+* **Releases:** [Download pre-built firmware images](https://github.com/radioman82/retro-go/releases)
 
-This fork contains my hardware-specific adaptations, configuration changes, emulator work and documentation for the ESP32-S3 platform.
+PixelGo incorporates hardware-specific adaptations, I2S sound architecture improvements, display timings, additional emulator ports and comprehensive documentation for the ESP32-S3 platform.
 
 > 🎮 **Pre-built firmware images available:** Ready-to-flash binaries and full images for the ESP32-S3 can be downloaded directly from the [GitHub Releases](https://github.com/radioman82/retro-go/releases) page.
 >
@@ -102,12 +103,12 @@ All buttons are configured with internal pull-ups (`pullup = 1`) and active-low 
 
 ## Current Development Status
 
-The ESP32-S3 port is actively being developed.
+The ESP32-S3 port is actively being developed under the PixelGo project.
 
 ### Working / tested (included in release image)
 
 * ESP32-S3 DevKitC-1 N16R8 & Waveshare Nano-S3 targets
-* Retro-Go builds successfully for ESP32-S3 with ESP-IDF
+* PixelGo builds successfully for ESP32-S3 with ESP-IDF
 * ILI9341 & ST7789 SPI displays
 * SD card support (SPI)
 * ESP32-S3 input/button configuration
@@ -238,17 +239,17 @@ launcher/build/launcher.bin
 
 ## Development Notes
 
-This repository is primarily a development project and should not be considered a finished distribution.
+PixelGo is primarily an active development project and evolving retro-gaming platform for ESP boards.
 
 Hardware configuration and emulator support may change as development continues.
 
-The goal is to maintain a documented ESP32-S3 based Retro-Go platform while experimenting with additional emulator support and hardware-specific improvements.
+The goal is to maintain a high-performance, well-documented ESP32-S3 retro platform while expanding emulator support, audio fidelity, and hardware-specific improvements.
 
 ---
 
 ## Credits & Upstream Project
 
-This project is an ESP32-S3 port based on the original [Retro-Go by ducalex](https://github.com/ducalex/retro-go).
+PixelGo is based on the fantastic upstream project [Retro-Go by ducalex](https://github.com/ducalex/retro-go).
 
 * **Upstream Repository:** [https://github.com/ducalex/retro-go](https://github.com/ducalex/retro-go)
 * **Original Author:** ducalex and contributors

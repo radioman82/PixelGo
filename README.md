@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/PixelGo.png" alt="PixelGo Logo" width="300">
+</p>
+
 # PixelGo – a Retro-Go fork for ESP boards
 
 **PixelGo** is a retro-gaming firmware and development fork of Retro-Go, focused on ESP microcontrollers (especially the **ESP32-S3 DevKitC-1 N16R8** and Waveshare Nano-S3) with SPI TFT displays and custom handheld hardware.

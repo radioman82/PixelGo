@@ -6,11 +6,11 @@
 * **Fork of:** [Retro-Go by ducalex](https://github.com/ducalex/retro-go)
 * **Author / Maintainer:** `radioman82`
 * **Development branch:** `nano-s3`
-* **Releases:** [Download pre-built firmware images](https://github.com/radioman82/retro-go/releases)
+* **Releases:** [Download pre-built firmware images](https://github.com/radioman82/PixelGo/releases)
 
 PixelGo incorporates hardware-specific adaptations, I2S sound architecture improvements, display timings, additional emulator ports and comprehensive documentation for the ESP32-S3 platform.
 
-> 🎮 **Pre-built firmware images available:** Ready-to-flash binaries and full images for the ESP32-S3 can be downloaded directly from the [GitHub Releases](https://github.com/radioman82/retro-go/releases) page.
+> 🎮 **Pre-built firmware images available:** Ready-to-flash binaries and full images for the ESP32-S3 can be downloaded directly from the [GitHub Releases](https://github.com/radioman82/PixelGo/releases) page.
 >
 > ⚠️ **Note on current release:** The emulators **Fake-08** (PICO-8) and **A500** (Amiga 500) as well as the games **Quake**, **Wolfenstein 3D**, and **Doom** are **not included** in the current pre-built release firmware.  
 > *(Hinweis: Die Emulatoren Fake-08 und A500 sowie die Spiele Quake, Wolfenstein und Doom sind im aktuellen Release nicht enthalten.)*

@@ -23,6 +23,25 @@ PixelGo incorporates hardware-specific adaptations, I2S sound architecture impro
 
 ---
 
+## 🤖 AI-Driven Hardware Co-Design & Digital Fabrication (PixelGo-01)
+
+Ein zentrales **Alleinstellungsmerkmal** von PixelGo ist der vollständige, durchgängige Hardware-Entwicklungs- und Fertigungszyklus für das Handheld-Gehäuse und das Gamepad, der in direkter Pair-Programming-Zusammenarbeit mit der **Google DeepMind Antigravity KI** realisiert wurde:
+
+* **Autonome parametrische CAD-Konstruktion in FreeCAD**:
+  * Die Gehäuseteile (Frontschale, Rückschale, D-Pad, Aktions- und Menütasten sowie Löthilfen) wurden von der KI über Python-Skripte in **FreeCAD** konstruiert.
+  * Sämtliche Innenmaße, Wandstärken, Toleranzen (PLA+ und TPU-Schrumpfung), M3-Einschmelzgewinde und passgenaue Aussparungen für das 2,8" ILI9341 TFT, den ESP32-S3, das TP4065-Lademodul, den MT3608 Step-Up, den MAX98357A I2S DAC, das MicroSD-Modul und den LiPo-Akku wurden millimetergenau aufeinander abgestimmt.
+* **Direkte Steuerung des Artillery 3D-Druckers über USB-Schnittstelle**:
+  * Die KI hat den Slicing-Prozess mit der CuraEngine vorbereitet und den **Artillery Sidewinder 3D-Drucker direkt über die serielle USB-Verbindung vom PC aus angesteuert**.
+  * Die KI überwachte die Heizbett- und Düsentemperaturen in Echtzeit (`M105`, `M109`, `M190`), streamte den G-Code Zeile für Zeile und steuerte den physischen Druckvorgang der Gehäuseteile und Tasten vollständig autonom.
+* **Maßgeschneidertes 1-lagiges KiCad 10 Gamepad-PCB**:
+  * Für das Gehäuse entwarf die KI ein **100 % einlagiges Gamepad-PCB** (`B.Cu`), optimiert für das Selberätzen im **Tonertransfer-Verfahren (Bügelmethode)**.
+  * Planare Leiterbahnführung **ohne jegliche Brücken oder Vias** (0 DRC-Fehler), flache Lötpads für Klingeldraht, integrierter 50 mm Prüfmaßstab und mikroskopische Zentrierpunkte für ein abrutschfreies Bohren der Tasterlöcher.
+
+📁 **CAD-Dateien, STLs & Druckanweisungen:** [`3ddruck/`](3ddruck/)  
+📁 **KiCad-Projekt, Gerber- & Tonertransfer-Ätzvorlagen (PDF):** [`kicad/pixelgo_gamepad/`](kicad/pixelgo_gamepad/)
+
+---
+
 ## Hardware
 
 ### ESP32-S3
@@ -88,20 +107,21 @@ I2S digital audio output configuration:
 
 The gamepad button configuration is:
 
-| Function |   GPIO | Configuration |
-| -------- | -----: | ------------- |
-| UP       |  GPIO6 | Pull-up, Level 0 (Active Low) |
-| DOWN     |  GPIO0 | Pull-up, Level 0 (Active Low) |
-| LEFT     | GPIO45 | Pull-up, Level 0 (Active Low) |
-| RIGHT    |  GPIO7 | Pull-up, Level 0 (Active Low) |
-| A        | GPIO15 | Pull-up, Level 0 (Active Low) |
-| B        |  GPIO5 | Pull-up, Level 0 (Active Low) |
-| SELECT   | GPIO16 | Pull-up, Level 0 (Active Low) |
-| START    | GPIO17 | Pull-up, Level 0 (Active Low) |
-| MENU     | GPIO18 | Pull-up, Level 0 (Active Low) |
-| OPTION   |  GPIO8 | Pull-up, Level 0 (Active Low) |
+| Function | Pad (W1) |   GPIO | Configuration | Physical Layout |
+| -------- | :------: | -----: | ------------- | --------------- |
+| DOWN     |  Pad 1   |  GPIO0 | Pull-up, Level 0 (Active Low) | Steuerkreuz Unten |
+| LEFT     |  Pad 2   | GPIO45 | Pull-up, Level 0 (Active Low) | Steuerkreuz Links |
+| UP       |  Pad 3   |  GPIO6 | Pull-up, Level 0 (Active Low) | Steuerkreuz Oben |
+| RIGHT    |  Pad 4   |  GPIO7 | Pull-up, Level 0 (Active Low) | Steuerkreuz Rechts |
+| SELECT   |  Pad 5   | GPIO16 | Pull-up, Level 0 (Active Low) | Menütaste Select |
+| GND      |  Pad 6/7 |    GND | Gemeinsame Masse | Masse (Mittenanbindung) |
+| START    |  Pad 8   | GPIO17 | Pull-up, Level 0 (Active Low) | Menütaste Start |
+| MENU (Y) |  Pad 9   | GPIO18 | Pull-up, Level 0 (Active Low) | Aktionstaste Y / Menu |
+| OPTION(X)|  Pad 10  |  GPIO8 | Pull-up, Level 0 (Active Low) | Aktionstaste X / Option |
+| A        |  Pad 11  | GPIO15 | Pull-up, Level 0 (Active Low) | Aktionstaste A |
+| B        |  Pad 12  |  GPIO5 | Pull-up, Level 0 (Active Low) | Aktionstaste B |
 
-All buttons are configured with internal pull-ups (`pullup = 1`) and active-low trigger (`level = 0`).
+All buttons are configured with internal pull-ups (`pullup = 1`) and active-low trigger (`level = 0`) on the custom 1-layer PCB ([`kicad/pixelgo_gamepad/`](kicad/pixelgo_gamepad/)).
 
 ---
 

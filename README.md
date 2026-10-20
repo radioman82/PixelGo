@@ -37,6 +37,10 @@ Ein zentrales **Alleinstellungsmerkmal** von PixelGo ist der vollständige, durc
   * Für das Gehäuse entwarf die KI ein **100 % einlagiges Gamepad-PCB** (`B.Cu`), optimiert für das Selberätzen im **Tonertransfer-Verfahren (Bügelmethode)**.
   * Planare Leiterbahnführung **ohne jegliche Brücken oder Vias** (0 DRC-Fehler), flache Lötpads für Klingeldraht, integrierter 50 mm Prüfmaßstab und mikroskopische Zentrierpunkte für ein abrutschfreies Bohren der Tasterlöcher.
 
+> 💡 **Hinweis zum Hardware-Aufbau (Prototyping / DIY-Hilfslösung):**  
+> Die hier bereitgestellte einlagige Gamepad-Platine mit Einzelader-Verdrahtung (Klingeldraht) zu den einzelnen Modulen ist eine **pragmatische Hilfs- und Prototyplösung**, um das Handheld mit einfachen Maker-Mitteln zu Hause (Tonertransfer, Ätzbad, Standard-Breakout-Module) schnell und günstig realisieren zu können.  
+> Für ein finales, kompaktes Gesamtsystem sind **professionell gefertigte Multi-Layer-Leiterplatten**, die sämtliche Elektronikkomponenten (ESP32-S3 SoC, Laderegelung, Step-Up-Wandler, I2S-Audio-DAC, MicroSD-Slot, Display-FPC-Stecker und Taster) monolithisch auf einem einzigen Board vereinen, natürlich **eindeutig im Vorteil** (minimale Bauhöhe, optimale EMV/Signalintegrität und Wegfall jeglichen Verdrahtungsaufwands).
+
 📁 **CAD-Dateien, STLs & Druckanweisungen:** [`3ddruck/`](3ddruck/)  
 📁 **KiCad-Projekt, Gerber- & Tonertransfer-Ätzvorlagen (PDF):** [`kicad/pixelgo_gamepad/`](kicad/pixelgo_gamepad/)
 
